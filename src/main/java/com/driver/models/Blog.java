@@ -20,7 +20,7 @@ public class Blog{
     private String title;
     private String content;
 
-    @CreationTimestamp
+    @CreatedDate
     private Date pubDate;
 
     @ManyToOne
