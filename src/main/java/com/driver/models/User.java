@@ -7,8 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-
-
 public class User{
 
     @Id
@@ -17,13 +15,20 @@ public class User{
 
     private String userName;
     private String password;
-    private String firstName = "test";
-    private String lastName = "test";
+    private String firstName;
+    private String lastName ;
 
     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
-    private List<Blog> blogList = new ArrayList();
+    List<Blog> blogList = new ArrayList<>();
 
     public User() {
+    }
+
+    public User(String userName, String password) {
+        this.firstName =  "test";
+        this.lastName = "test";
+        this.userName = userName;
+        this.password = password;
     }
 
     public User(int id, String userName, String password, String firstName, String lastName, List<Blog> blogList) {

@@ -25,10 +25,10 @@ public class Blog{
 
     @ManyToOne
     @JoinColumn
-    private User user;
+    User user;
 
     @OneToMany(mappedBy = "blog",cascade = CascadeType.ALL)
-    private List<Image> imageList = new ArrayList();
+    private List<Image> imageList = new ArrayList<>();
 
     public Blog() {
     }
