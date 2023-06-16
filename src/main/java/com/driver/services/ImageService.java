@@ -22,8 +22,11 @@ public class ImageService {
 
         Blog blog = blogRepository2.findById(blogId).get();
 
-        blog.getImageList().add(image);
         image.setBlog(blog);
+        blog.getImageList().add(image);
+
+
+
 
         blogRepository2.save(blog);
 
@@ -33,9 +36,9 @@ public class ImageService {
     }
 
     public void deleteImage(Integer id){
-        Image image = imageRepository2.findById(id).get();
 
-        imageRepository2.delete(image);
+
+        imageRepository2.deleteById(id);
 
 
     }

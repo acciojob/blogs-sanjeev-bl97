@@ -19,14 +19,14 @@ public class User{
     private String lastName ;
 
     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
-    List<Blog> blogList = new ArrayList<>();
+    private List<Blog> blogList = new ArrayList<>();
 
     public User() {
     }
 
     public User(String username, String password) {
         this.firstName =  "test";
-        this.lastName = "test";
+        this.lastName =   "test";
         this.username = username;
         this.password = password;
     }

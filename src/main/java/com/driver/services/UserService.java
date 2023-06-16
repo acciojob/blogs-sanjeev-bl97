@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class UserService {
     @Autowired
-    UserRepository userRepository;
+    UserRepository userRepository3;
 
     public User createUser(String username, String password){
         User user = new User(username,password);
@@ -19,7 +19,7 @@ public class UserService {
 //        user.setUserName(username);
 //        user.setPassword(password);
 
-        userRepository.save(user);
+        userRepository3.save(user);
 
         return user;
 
@@ -27,17 +27,16 @@ public class UserService {
     }
 
     public void deleteUser(int userId){
-        User user = userRepository.findById(userId).get();
 
-        userRepository.delete(user);
+        userRepository3.deleteById(userId);
 
     }
 
     public User updateUser(Integer id, String password){
-        User user = userRepository.findById(id).get();
+        User user = userRepository3.findById(id).get();
 
         user.setPassword(password);
-        userRepository.save(user);
+        userRepository3.save(user);
 
         return user;
 

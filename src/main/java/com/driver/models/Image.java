@@ -16,7 +16,7 @@ public class Image{
 
     @ManyToOne
     @JoinColumn
-    Blog blog;
+    private Blog blog;
 
     public Image(int id, String description, String dimensions, Blog blog) {
         this.id = id;
