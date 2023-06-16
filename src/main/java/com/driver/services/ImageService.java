@@ -5,8 +5,6 @@ import com.driver.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class ImageService {
 
@@ -20,7 +18,7 @@ public class ImageService {
         Image image = new Image();
 
         image.setDescription(description);
-        image.setDimension(dimensions);
+        image.setDimensions(dimensions);
 
         Blog blog = blogRepository2.findById(blogId).get();
 
@@ -47,7 +45,7 @@ public class ImageService {
           int count = 0;
           Image image= imageRepository2.findById(id).get();
 
-          String currDimension = image.getDimension();
+          String currDimension = image.getDimensions();
           String[] arr = currDimension.split("X");
           int curr = 1;
 
